@@ -207,6 +207,19 @@ public class SinglyLinkedList<T> {
     public Object get(int index) {
 
 
+        int currentIndex = 0;
+        Node<T> currentNode = head;
+
+        while (currentNode != null && currentIndex != index) {
+            currentNode = currentNode.next;
+            currentIndex++;
+        }
+        if (currentIndex == index && currentNode != null) {
+            return currentNode.data;
+        }
+        return null;
+
+
 //        Node current = this.head;
 //        int seek = 0;
 //        while (current != null) {
@@ -216,7 +229,7 @@ public class SinglyLinkedList<T> {
 //            seek++;
 //            current = current.next;
 //        }
-        return -1;
+//        return -1;
     }
 
 
@@ -230,7 +243,8 @@ public class SinglyLinkedList<T> {
 //            current = current.next;
 //        }
 //        return SinglyLinkedList;
-//    }
+        return null;
+    }
 
 
     public void sort() {
@@ -252,6 +266,19 @@ public class SinglyLinkedList<T> {
 //        }
 
     }
+
+    public int size() {
+
+            int currentIndex = 0;
+            Node<T> currentNode = head;
+
+            while (currentNode != null) {
+                currentNode = currentNode.next;
+                currentIndex++;
+            }
+
+            return currentIndex;
+        }
 //    public static void main(String[] args) {
 //        LinkedList linky = new LinkedList();
 //
